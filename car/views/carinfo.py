@@ -29,7 +29,7 @@ class Index(View):
 
         request.session['cart'] = cart
         print('cart' , request.session['cart'])
-        return redirect('get-car')
+        return redirect('get-car-index')
 
 
 
