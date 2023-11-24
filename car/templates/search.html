@@ -1,0 +1,102 @@
+{% extends 'navbar.html' %}
+
+{% block search %}
+    <style>
+
+/* SECTION: content table */
+
+        table, th, td {
+            border: none;
+            border-collapse: collapse;
+        }
+
+        table.center {
+            margin-left: auto; 
+            margin-right: auto;
+        }
+
+/* END SECTION: content table */
+
+/* SECTION: action button */
+
+        .container_button {
+            height: 100px;
+            position: relative;
+            border: none;
+        }
+
+        .center_button {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .button_style {
+            background-color: orange;
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button_style:hover {
+            background-color: gold;
+        }
+
+/* END SECTION: action button */
+
+    </style>
+
+    <p></p>
+
+    <form action="carinfo.html">
+        <table class="center" style="width: 500px;">
+            <tr>
+                <th style="display: none;">Header 1</th>
+                <th style="display: none;">Header 2</th>
+            </tr>
+            <tr style="height: 50px;">
+                <td>Model name</td>
+                <td>
+                    <input type="text" size="50">
+                </td>
+            </tr>
+            <tr style="height: 50px;">
+                <td>Brand</td>
+                <td>
+                    <input type="text" size="50">
+                </td>
+            </tr>
+            <tr style="height: 50px;">
+                <td>Year</td>
+                <td>
+                    <input type="text" size="50">
+                </td>
+            </tr>
+            <tr style="height: 50px;">
+                <td>Body type</td>
+                <td>
+                    <input type="text" size="50">
+                </td>
+            </tr>
+            <tr style="height: 50px;">
+                <td>Num. of seats</td>
+                <td>
+                    <input type="text" size="50">
+                </td>
+            </tr>
+        </table>        
+        <div class="container_button">
+            <div class="center_button">
+                <input class="button_style" type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+{% endblock %}

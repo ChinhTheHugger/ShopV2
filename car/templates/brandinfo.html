@@ -1,0 +1,87 @@
+{% extends 'navbar.html' %}
+
+{% block brandinfo %}
+
+    <style>
+/* SECTION: content table */
+
+        table, th, td {
+            border: none;
+            border-collapse: collapse;
+        }
+
+        table.center {
+            margin-left: auto; 
+            margin-right: auto;
+        }
+
+/* END SECTION: content table */
+
+/* SECTION: split columns */
+
+        /* Create two equal columns that floats next to each other */
+        .s-column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+
+        /* Clear floats after the columns */
+        .s-row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .left {
+            width: 60%;
+        }
+
+        .right {
+            width: 40%;
+        }
+
+/* END SECTION: split columns */
+
+            .cell {
+                display: inline-block;
+                word-spacing: normal;
+                letter-spacing: normal;
+                white-space : normal;
+                width: 300px;
+            }
+    </style>
+
+    {% for b in brand %}
+    <div class="s-row" style="background-color: white;">
+        <div class="s-column left">
+           <div class="cell">
+            <img style="text-align: center;height: 200px;width: 300px;" src="{{b.image.url}}" alt="Logo">
+           </div>
+        </div>
+        <div class="s-column right" style="background-color: white;">
+            <table class="center" style="width: 100%;">
+                <tr>
+                    <th style="display: none;">Header 1</th>
+                    <th style="display: none;">Header 2</th>
+                </tr>
+                <tr style="height: 50px;">
+                    <td style="padding: 5px;background-color: #777;color: white;    ">NAME</td>
+                    <td style="padding: 5px;">{{b.name}}</td>
+                </tr>
+                <tr style="height: 50px;">
+                    <td style="padding: 5px;background-color: #777;color: white;">WEBSITE</td>
+                    <td style="padding: 5px;">
+                        <a href="https://{{b.website}}">{{b.website}}</a>
+                    </td>
+                </tr>
+                <tr style="height: 50px;">
+                    <td style="padding: 5px;background-color: #777;color: white;">DESCRIPTION</td>
+                    <td style="padding: 5px;">{{b.desintext}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    {% endfor %}
+    
+{% endblock %}

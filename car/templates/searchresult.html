@@ -1,0 +1,220 @@
+{% extends 'navbar.html' %}
+
+{% block search %}
+    <style>
+
+/* SECTION: search table */
+
+        table, th, td {
+            border: none;
+            border-collapse: collapse;
+        }
+
+        table.center {
+            margin-left: auto; 
+            margin-right: auto;
+        }
+
+/* END SECTION: search table */
+
+/* SECTION: action button */
+
+.container_button {
+            height: 100px;
+            position: relative;
+            border: none;
+        }
+
+        .center_button {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .button_style {
+            background-color: #4caf50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button_style:hover {
+            background-color: gold;
+            color: black;
+        }
+
+/* END SECTION: action button */
+
+/* SECTION: image gallery */
+
+        div.gallery {
+            border: 1px solid #ccc;
+        }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+
+/* END SECTION: image gallery */
+
+/* SECTION: responsive image gallery */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .responsive {
+            padding: 0 6px;
+            float: left;
+            width: 24.99999%;
+        }
+
+        @media only screen and (max-width: 700px) {
+        .responsive {
+            width: 49.99999%;
+            margin: 6px 0;
+        }
+        }
+
+        @media only screen and (max-width: 500px) {
+        .responsive {
+            width: 100%;
+        }
+        }
+
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+/* END SECTION: responsive image gallery */
+        
+    </style>
+
+    <p></p>
+
+    <form action="carinfo.html">
+        <table class="center" style="width: 500px;">
+            <tr>
+                <th style="display: none;">Header 1</th>
+                <th style="display: none;">Header 2</th>
+            </tr>
+            <tr style="height: 50px;">
+                <td>Model name</td>
+                <td>
+                    <input type="text" size="50">
+                </td>
+            </tr>
+            <tr style="height: 50px;">
+                <td>Brand</td>
+                <td>
+                    <input type="text" size="50">
+                </td>
+            </tr>
+            <tr style="height: 50px;">
+                <td>Year</td>
+                <td>
+                    <input type="text" size="50">
+                </td>
+            </tr>
+            <tr style="height: 50px;">
+                <td>Body type</td>
+                <td>
+                    <input type="text" size="50">
+                </td>
+            </tr>
+            <tr style="height: 50px;">
+                <td>Num. of seats</td>
+                <td>
+                    <input type="text" size="50">
+                </td>
+            </tr>
+        </table>        
+        <div class="container_button">
+            <div class="center_button">
+                <input class="button_style" type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+
+    <h1></h1>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank">
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipart-library.com%2Fimg%2F2050755.jpg&f=1&nofb=1&ipt=0d7adf383429f9590f03c88cc704bbfe868c5fa94abffc7e7ebc4d8674a7749f&ipo=images" alt="Cinque Terre" width="600" height="400">
+            </a>
+            <div class="desc" style="background-color: #555; color: white;">Car Result</div>
+        </div>
+        <p></p>
+    </div>
+         
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank">
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipart-library.com%2Fimg%2F2050755.jpg&f=1&nofb=1&ipt=0d7adf383429f9590f03c88cc704bbfe868c5fa94abffc7e7ebc4d8674a7749f&ipo=images" alt="Cinque Terre" width="600" height="400">
+            </a>
+            <div class="desc" style="background-color: #555; color: white;">Car Result</div>
+        </div>
+        <p></p>
+    </div>
+        
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank">
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipart-library.com%2Fimg%2F2050755.jpg&f=1&nofb=1&ipt=0d7adf383429f9590f03c88cc704bbfe868c5fa94abffc7e7ebc4d8674a7749f&ipo=images" alt="Cinque Terre" width="600" height="400">
+            </a>
+            <div class="desc" style="background-color: #555; color: white;">Car Result</div>
+        </div>
+        <p></p>
+    </div>
+        
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank">
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipart-library.com%2Fimg%2F2050755.jpg&f=1&nofb=1&ipt=0d7adf383429f9590f03c88cc704bbfe868c5fa94abffc7e7ebc4d8674a7749f&ipo=images" alt="Cinque Terre" width="600" height="400">
+            </a>
+            <div class="desc" style="background-color: #555; color: white;">Car Result</div>
+        </div>
+        <p></p>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank">
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipart-library.com%2Fimg%2F2050755.jpg&f=1&nofb=1&ipt=0d7adf383429f9590f03c88cc704bbfe868c5fa94abffc7e7ebc4d8674a7749f&ipo=images" alt="Cinque Terre" width="600" height="400">
+            </a>
+            <div class="desc" style="background-color: #555; color: white;">Car Result</div>
+        </div>
+        <p></p>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank">
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipart-library.com%2Fimg%2F2050755.jpg&f=1&nofb=1&ipt=0d7adf383429f9590f03c88cc704bbfe868c5fa94abffc7e7ebc4d8674a7749f&ipo=images" alt="Cinque Terre" width="600" height="400">
+            </a>
+            <div class="desc" style="background-color: #555; color: white;">Car Result</div>
+        </div>
+        <p></p>
+    </div>
+{% endblock %}
