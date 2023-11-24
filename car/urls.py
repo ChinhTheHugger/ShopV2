@@ -8,6 +8,7 @@ from .views.rent import Contract
 from .views.contract import ContractView
 from .views.carinfo import get_car, Index
 from .views.brandinfo import get_brand
+from .views.search import search
 from .middleware.auth import  auth_middleware
 
 
@@ -18,6 +19,8 @@ urlpatterns = [
     path('signup', Signup.as_view(), name='signup'),
     path('login', Login.as_view(), name='login'),
     path('logout', logout , name='logout'),
+
+    path('search', search , name='search'),
 
     # path('carinfo-index/<int:pk>', Index.as_view(), name='get-car-index'),
     path('carinfo', Index.as_view(), name='get-car-index'),
