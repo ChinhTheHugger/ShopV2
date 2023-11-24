@@ -88,15 +88,18 @@
             <li>
                 <a href="/category">CATEGORY</a>
             </li>
+            <li style="float: right;">
+                <a href="/cart">CART
+                    <span class="badge badge-success">{{request.session.cart.keys|length}}</span>
+                    
+                </a>
+            </li>
             {% if request.session.customer %}
             <li style="float: right;">
                 <a href="/contract">CONTRACT</a>
             </li>
             <li style="float: right;">
                 <a href="/logout">LOGOUT</a>
-            </li>
-            <li style="float: right;">
-                <a href="/cart">CART</a>
             </li>
             {% else %}
             <li style="float: right;">

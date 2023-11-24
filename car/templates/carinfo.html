@@ -301,34 +301,34 @@
                     <th style="display: none;">Header 2</th>
                 </tr>
                 <tr style="height: 50px;">
-                    <td style="padding-left: 50px;padding-top: 20px;padding-bottom: 20px; background-color: #777;color: white;">Model name</td>
+                    <td style="padding-left: 50px;padding-top: 20px;padding-bottom: 20px; background-color: #777;color: white;">MODEL</td>
                     <td style="padding-left: 50px;width: 550px;">{{c.model}}</td>
                 </tr>
                 <tr style="height: 50px;">
-                    <td style="padding-left: 50px;padding-top: 20px;padding-bottom: 20px;background-color: #777;color: white;">Brand</td>
+                    <td style="padding-left: 50px;padding-top: 20px;padding-bottom: 20px;background-color: #777;color: white;">BRAND</td>
                     <td style="padding-left: 50px;width: 550px;">
                         <a href="/brandinfo/{{c.brand.id}}">{{c.brand.name}}</a>
                     </td>
                 </tr>
                 <tr style="height: 50px;">
-                    <td style="padding-left: 50px;padding-top: 20px;padding-bottom: 20px;background-color: #777;color: white;">Year</td>
+                    <td style="padding-left: 50px;padding-top: 20px;padding-bottom: 20px;background-color: #777;color: white;">YEAR</td>
                     <td style="padding-left: 50px;width: 550px;">{{c.year}}</td>
                 </tr>
                 <tr style="height: 50px;">
-                    <td style="padding-left: 50px;padding-top: 20px;padding-bottom: 20px;background-color: #777;color: white;">Body type</td>
+                    <td style="padding-left: 50px;padding-top: 20px;padding-bottom: 20px;background-color: #777;color: white;">CATEGORY</td>
                     <td style="padding-left: 50px;width: 550px;">{{c.category}}</td>
                 </tr>
                 <tr style="height: 50px;">
-                    <td style="padding-left: 50px;padding-top: 20px;padding-bottom: 20px;;background-color: #777;color: white;">Rent price</td>
-                    <td style="padding-left: 50px;width: 550px;">{{c.price}} per car per day</td>
+                    <td style="padding-left: 50px;padding-top: 20px;padding-bottom: 20px;;background-color: #777;color: white;">PRICE</td>
+                    <td style="padding-left: 50px;width: 550px;">Gil {{c.price}} / car / day</td>
                 </tr>
                 <tr style="height: 50px;">
-                    <td style="padding-left: 50px;padding-top: 20px;padding-bottom: 20px;background-color: #777;color: white;">In stock</td>
+                    <td style="padding-left: 50px;padding-top: 20px;padding-bottom: 20px;background-color: #777;color: white;">IN STOCK</td>
                     <td style="padding-left: 50px;width: 550px;">{{c.instock}}</td>
                 </tr>
             </table>
                 {% if c|is_in_cart:request.session.cart %}
-                <div class="container_button">
+                <!-- <div class="container_button">
                     <div class="center_button">
                         <div class="row no-gutters">
                             <form action="/carinfo/{{c.id}}" class="col-2 " method="post">
@@ -345,6 +345,11 @@
                             </form>
                         </div>
                     </div>
+                </div> -->
+                <div class="container_button">
+                    <div class="center_button">
+                        <button class="button_style" style="width: 600px; height: 100px; font-size: xx-large">ADDED TO CART</button>
+                    </div>
                 </div>
                 
                 {% else %}
@@ -352,7 +357,7 @@
                     <div class="center_button">
                         <form action="/carinfo/{{c.id}}" method="POST" class="btn-block">
                             {% csrf_token %}
-                            <input hidden type="text" name='carcart' value='{{c.id}}'>
+                            <input hidden type="text" name='car' value='{{c.id}}'>
                             <button class="button_style" style="width: 600px; height: 100px; font-size: xx-large" type="submit">RENT CAR</button>
                         </form>
                     </div>

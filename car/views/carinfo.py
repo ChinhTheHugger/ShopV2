@@ -7,7 +7,7 @@ from django.views import View
 class Index(View):
 
     def post(self , request):
-        car = request.POST.get('carcart')
+        car = request.POST.get('car')
         remove = request.POST.get('remove')
         cart = request.session.get('cart')
         if cart:
@@ -29,13 +29,13 @@ class Index(View):
 
         request.session['cart'] = cart
         print('cart' , request.session['cart'])
-        return redirect('get-car-index')
+        return redirect('get-car')
 
 
 
     def get(self , request):
         # print()
-        return HttpResponseRedirect(f'/carinfo/car.id{request.get_full_path()[1:]}')
+        return HttpResponseRedirect(f'/carinfo/{request.get_full_path()[1:]}')
 
 def get_car(request,pk):
 
