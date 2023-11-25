@@ -23,7 +23,7 @@ urlpatterns = [
 
     path('search', search , name='search'),
     
-    path('category', category , name='category'),
+    path('category/<int:pk>', category , name='category'),
 
     # path('carinfo-index/<int:pk>', Index.as_view(), name='get-car-index'),
     path('carinfo', Index.as_view(), name='get-car-index'),

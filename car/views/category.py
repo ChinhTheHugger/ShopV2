@@ -3,12 +3,11 @@ from car.models.car import Car
 from car.models.category import Category
 from django.views import View
 
-def category(request):
-    ctgr = request.POST.get('ctgr')
+def category(request,pk):
     category = Category.objects.all()
-    if ctgr:
-        car = Car.objects.select_related('brand').filter(category=ctgr)
-    else:
-        car = Car.objects.select_related('brand').all()
+    car = Car.objects.select_related('brand').all()
+    if pk != 0:
+        car = car.filter(category=pk)
+        
     context = {'category': category,'car': car}
     return render(request,'category.html', context)
