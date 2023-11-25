@@ -6,6 +6,9 @@ from django.views import View
 def category(request):
     ctgr = request.POST.get('ctgr')
     category = Category.objects.all()
-    car = Car.objects.select_related('brand').filter(category=ctgr)
+    if ctgr:
+        car = Car.objects.select_related('brand').filter(category=ctgr)
+    else:
+        car = Car.objects.select_related('brand').all()
     context = {'category': category,'car': car}
     return render(request,'category.html', context)
