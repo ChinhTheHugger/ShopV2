@@ -327,7 +327,6 @@
                     <td style="padding-left: 50px;width: 550px;">{{c.instock}}</td>
                 </tr>
             </table>
-                {% if c|is_in_cart:request.session.cart %}
                 <!-- <div class="container_button">
                     <div class="center_button">
                         <div class="row no-gutters">
@@ -346,24 +345,30 @@
                         </div>
                     </div>
                 </div> -->
-                <div class="container_button">
+                {% comment %} <div class="container_button">
                     <div class="center_button">
                         <button class="button_style" style="width: 600px; height: 100px; font-size: xx-large">ADDED TO CART</button>
                     </div>
-                </div>
+                </div> {% endcomment %}
                 
-                {% else %}
                 <div class="container_button">
                     <div class="center_button">
+                        {% if requets.session.customer %}
                         <form action="/carinfo/{{c.id}}" method="POST" class="btn-block">
                             {% csrf_token %}
                             <input hidden type="text" name='car' value='{{c.id}}'>
                             <button class="button_style" style="width: 600px; height: 100px; font-size: xx-large" type="submit">RENT CAR</button>
                         </form>
+                        {% else %}
+                        <form action="/carinfo/{{c.id}}" method="POST" class="btn-block">
+                            {% csrf_token %}
+                            <input hidden type="text" name='car' value='{{c.id}}'>
+                            <button class="button_style" style="width: 600px; height: 100px; font-size: xx-large" type="submit">RENT CAR</button>
+                        </form>
+                        {% endif %}
                     </div>
                 </div>
                 
-                {% endif %}
             <!-- <div class="container_button">
                 <div class="center_button">
                     <a href="/login">
