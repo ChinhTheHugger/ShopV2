@@ -22,11 +22,11 @@ class Contract(models.Model):
 
     @staticmethod
     def get_contracts_by_customer(customer_id):
-        return Contract.objects.filter(customer=customer_id).order_by('-date')
+        return Contract.objects.filter(customer=customer_id)
     
     @property
     def is_past_due(self):
-        return date.today() > self.end_date
+        return date.today() < self.end_date
     
     @property
     def car_name(self):
