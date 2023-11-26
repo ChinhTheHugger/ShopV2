@@ -4,44 +4,44 @@ from car.models.category import Category
 from django.views import View
 
 # Create your views here.
-class Index(View):
+# class Index(View):
 
-    def post(self , request):
-        car = request.POST.get('car')
-        remove = request.POST.get('remove')
-        cart = request.session.get('cart')
-        if cart:
-            quantity = cart.get(car)
-            if quantity:
-                if remove:
-                    if quantity<=1:
-                        cart.pop(car)
-                    else:
-                        cart[car]  = quantity-1
-                else:
-                    cart[car]  = quantity+1
+#     def post(self , request):
+#         car = request.POST.get('car')
+#         remove = request.POST.get('remove')
+#         cart = request.session.get('cart')
+#         if cart:
+#             quantity = cart.get(car)
+#             if quantity:
+#                 if remove:
+#                     if quantity<=1:
+#                         cart.pop(car)
+#                     else:
+#                         cart[car]  = quantity-1
+#                 else:
+#                     cart[car]  = quantity+1
 
-            else:
-                cart[car] = 1
-        else:
-            cart = {}
-            cart[car] = 1
+#             else:
+#                 cart[car] = 1
+#         else:
+#             cart = {}
+#             cart[car] = 1
 
-        request.session['cart'] = cart
-        print('cart' , request.session['cart'])
-        return redirect('get-car-index')
+#         request.session['cart'] = cart
+#         print('cart' , request.session['cart'])
+#         return redirect('get-car-index')
 
 
 
-    def get(self , request):
-        # print()
-        return HttpResponseRedirect(f'/carinfo/{request.get_full_path()[1:]}')
+#     def get(self , request):
+#         # print()
+#         return HttpResponseRedirect(f'/carinfo/{request.get_full_path()[1:]}')
 
 def get_car(request,pk):
 
-    cart = request.session.get('cart')
-    if not cart:
-        request.session['cart'] = {}
+    # cart = request.session.get('cart')
+    # if not cart:
+    #     request.session['cart'] = {}
     
     # cars = None
     # categories = Category.get_all_categories()
@@ -56,5 +56,8 @@ def get_car(request,pk):
     # data['categories'] = categories
 
     carinfo = Car.objects.select_related('brand').filter(id=pk)
-    context = {'carinfo': carinfo}
+    for c in carinfo:
+        carbrand = Car.objects.select_related('brand').filter(brand=c.brand)[:10]
+        carcategory = Car.objects.select_related('brand').filter(category=c.category)[:10]
+    context = {'carinfo': carinfo,'carbrand': carbrand,'carcategory': carcategory}
     return render(request,'carinfo.html',context)

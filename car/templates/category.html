@@ -87,7 +87,7 @@
 
     /* SECTION: vertical menu */
     .vertical-menu {
-        width: 90%%;
+        width: 90%;
       }
       
       .vertical-menu a {
@@ -122,20 +122,20 @@
                   </div>
             </div>
 
-            {% comment %} <script> 
+            <!-- {% comment %} <script> 
                 function myFunction() { 
                     document.getElementById("SelectCategory").submit(); 
                 } 
-            </script>  {% endcomment %}
+            </script>  {% endcomment %} -->
 
             <div class="column right">
                 {% for c in car %}
                 <div class="responsive">
                     <div class="gallery">
-                        <a target="_blank">
+                        <a href="/carinfo/{{c.id}}">
                             <img src="{{c.front.url}}" alt="Cinque Terre" style="width: 100%;height: 400px;">
                         </a>
-                        <div class="desc">{{c.brand.name}} {{c.model}} {{c.year}}</div>
+                        <div class="desc"  style="background-color: #555; color: white;">{{c.brand.name}} {{c.model}} {{c.year}}</div>
                     </div>
                     <p></p>
                 </div>

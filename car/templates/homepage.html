@@ -105,7 +105,10 @@
 
 /* SECTION: bg image */
             body {
-                background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F06%2FLamborghini-Desktop-HD-Car-Wallpapers.jpg&f=1&nofb=1&ipt=b4955e6aeb6d19c745c9992687e36916f667e31d60d423ba96729dc4d55644cb&ipo=images");
+                background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperforu.com%2Fwp-content%2Fuploads%2F2020%2F12%2Fcar-wallpaper-20122113415539.jpg&f=1&nofb=1&ipt=8ff38727fd9c3ab3a9f6cc3ca6d00c9214351a7168fdedc0d53c82634728a3eb&ipo=images");
+                background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
             }
 
 /* END SECTION: bg image */
@@ -242,15 +245,15 @@
             <li>
                 <a href="/search">SEARCH</a>
             </li>
-            <li style="float: right;">
+            <!-- <li style="float: right;">
                 <a href="/cart">CART
                     <span class="badge badge-success">{{request.session.cart.keys|length}}</span>
                     
                 </a>
-            </li>
+            </li> -->
             {% if request.session.customer %}
             <li style="float: right;">
-                <a href="/contract">CONTRACT</a>
+                <a href="/account">ACCOUNT</a>
             </li>
             <li style="float: right;">
                 <a href="/logout">LOGOUT</a>

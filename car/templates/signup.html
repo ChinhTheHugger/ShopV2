@@ -61,9 +61,10 @@
         {% csrf_token %}
 
         {% if error%}
-        <div class="alert alert-danger" role="alert">
+        <div class="alert alert-danger" role="alert" style="background-color: red;color: #333;font-size: xx-large;">
             {{error}}
         </div>
+        <p></p>
         {% endif %}
         <!-- firstname -->
         <table class="center" style="width: 30%;background-color: white;">
