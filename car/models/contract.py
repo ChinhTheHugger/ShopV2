@@ -26,7 +26,7 @@ class Contract(models.Model):
     
     @property
     def is_past_due(self):
-        return date.today() < self.end_date
+        return date.today() <= self.end_date
     
     @property
     def car_name(self):

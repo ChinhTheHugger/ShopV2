@@ -71,7 +71,7 @@
 
             div.scroll-container {
                 background-color: #d7d0d0;
-                overflow: hidden;
+                overflow: auto;
                 white-space: nowrap;
                 padding: 10px;
             }
@@ -339,12 +339,12 @@
         
         <div class="scroll-container">
             {% for brandMP in brandMostPopular %}
-            <a href="/brandinfo/{{brandMP.id}}">
-                <div class="cell">
+            <div class="cell">
+                <a href="/brandinfo/{{brandMP.id}}">
                     <img src="{{brandMP.image.url}}" alt="Cinque Terre">
                     <p style="text-align: center;text-transform: uppercase;">{{brandMP.name}}</p>
-                </div>
-            </a>
+                </a>
+            </div>
             {% endfor %}
         </div>
 

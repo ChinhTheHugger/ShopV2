@@ -13,8 +13,10 @@ class ContractView(View):
 
     def get(self , request ):
         customer = request.session.get('customer')
+
         # contracts = Contract.get_contracts_by_customer(customer_id=customer)
         # contracts = contracts.select_related('car')
+        # contracts = contracts.select_related('car.brand')
         # contracts = contracts.order_by('-end_date')
 
         dict = {'customer': customer}
