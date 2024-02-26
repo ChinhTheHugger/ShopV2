@@ -353,8 +353,10 @@
         <div class="scroll-container">
             {% for carC in carCategory %}
             <div class="cell">
-                <img src="{{carC.image.url}}" alt="Cinque Terre">
-                <p style="text-align: center;text-transform: uppercase;">{{carC.name}}</p>
+                <a href="/category/{{carC.id}}">
+                    <img src="{{carC.image.url}}" alt="Cinque Terre">
+                    <p style="text-align: center;text-transform: uppercase;">{{carC.name}}</p>
+                </a>
             </div>
             {% endfor %}
         </div>
