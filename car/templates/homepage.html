@@ -282,7 +282,7 @@
                 <form action="/carinfo/{{carTT.id}}" method="post">
                     {% csrf_token %}
                     <input hidden type="text" name='car' value='{{carTT.id}}'>
-                    <input type="image" src="{{carTT.front.url}}" style="height: 500px;">
+                    <input type="image" src="{{carTT.front_img}}" style="height: 500px;">
                 </form>
             </div>
             {% endfor %}
@@ -328,7 +328,7 @@
             {% for carMP in carMostPopular %}
             <a href="/carinfo/{{carMP.id}}">
                 <div class="cell">
-                    <img src="{{carMP.front.url}}" alt="Cinque Terre">
+                    <img src="{{carMP.front_img}}" alt="Cinque Terre">
                     <p style="text-align: center;text-transform: uppercase;">{{carMP.brand.name}} {{carMP.model}} {{carMP.year}}</p>
                 </div>
             </a>
@@ -341,7 +341,7 @@
             {% for brandMP in brandMostPopular %}
             <div class="cell">
                 <a href="/brandinfo/{{brandMP.id}}">
-                    <img src="{{brandMP.image.url}}" alt="Cinque Terre">
+                    <img src="{{brandMP.icon_img}}" alt="Cinque Terre">
                     <p style="text-align: center;text-transform: uppercase;">{{brandMP.name}}</p>
                 </a>
             </div>
@@ -354,7 +354,7 @@
             {% for carC in carCategory %}
             <div class="cell">
                 <a href="/category/{{carC.id}}">
-                    <img src="{{carC.image.url}}" alt="Cinque Terre">
+                    <img src="{{carC.icon_img}}" alt="Cinque Terre">
                     <p style="text-align: center;text-transform: uppercase;">{{carC.name}}</p>
                 </a>
             </div>
