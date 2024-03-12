@@ -261,15 +261,15 @@ div.scroll-container {
     <div class="container">
         <div class="mySlides">
             <div class="numbertext">1/3</div>
-            <img src="{{c.front.url}}" style="width: 100%;">
+            <img src="{{c.front_img}}" style="width: 100%;">
         </div>
         <div class="mySlides">
             <div class="numbertext">2/3</div>
-            <img src="{{c.back.url}}" style="width: 100%;">
+            <img src="{{c.back_img}}" style="width: 100%;">
         </div>
         <div class="mySlides">
             <div class="numbertext">3/3</div>
-            <img src="{{c.interior.url}}" style="width: 100%;">
+            <img src="{{c.interior_img}}" style="width: 100%;">
         </div>
         
         <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -427,7 +427,7 @@ div.scroll-container {
         {% for carb in carbrand %}
         <a href="/carinfo/{{carb.id}}">
             <div class="cell">
-                <img src="{{carb.front.url}}" alt="Cinque Terre">
+                <img src="{{carb.front_img}}" alt="Cinque Terre">
                 <p style="text-align: center;text-transform: uppercase;">{{carb.brand.name}} {{carb.model}} {{carb.year}}</p>
             </div>
         </a>
@@ -440,7 +440,7 @@ div.scroll-container {
         {% for carc in carcategory %}
         <a href="/carinfo/{{carc.id}}">
             <div class="cell">
-                <img src="{{carc.front.url}}" alt="Cinque Terre">
+                <img src="{{carc.icon_img}}" alt="Cinque Terre">
                 <p style="text-align: center;text-transform: uppercase;">{{carc.brand.name}} {{carc.model}} {{carc.year}}</p>
             </div>
         </a>
