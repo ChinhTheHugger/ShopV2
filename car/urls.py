@@ -16,24 +16,23 @@ from .middleware.auth import  auth_middleware
 
 urlpatterns = [
     path('', homepage, name='homepage'),
+
     path('homepage', homepage, name='homepage'),
 
     path('signup', Signup.as_view(), name='signup'),
+
     path('login', Login.as_view(), name='login'),
+    
     path('logout', logout , name='logout'),
+
 
     path('search', search , name='search'),
     
     path('category/<int:pk>', category , name='category'),
 
-    # path('carinfo-index/<int:pk>', Index.as_view(), name='get-car-index'),
-    # path('carinfo', Index.as_view(), name='get-car-index'),
     path('carinfo/<int:pk>', get_car, name='get-car'),
 
     path('brandinfo/<int:pk>', get_brand, name='get-brand'),
-
-    # path('cart', auth_middleware(Cart.as_view()) , name='cart'),
-    # path('check-out', Contract.as_view() , name='checkout'),
 
     path('rentcar', auth_middleware(create_contract), name='rent-car'),
 
