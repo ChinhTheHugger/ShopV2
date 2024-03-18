@@ -3,7 +3,6 @@ from django.urls import path
 from .views.home import homepage
 from .views.signup import Signup
 from .views.login import Login , logout
-from .views.cart import Cart
 from .views.rent import create_contract
 from ..contract_app.view.savecontract import ContractSave
 from .views.contract import ContractView
@@ -24,6 +23,7 @@ urlpatterns = [
     path('login', Login.as_view(), name='login'),
     
     path('logout', logout , name='logout'),
+
 
     path('search', search , name='search'),
     
