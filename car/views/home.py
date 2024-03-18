@@ -29,8 +29,8 @@ def homepage(request):
     context = {'cartopthree': carTop3,'carMostPopular': carMostPopular,'brandMostPopular': brandMostPopular,'carCategory': carCategory}
     return render(request,'homepage.html',context)
     
-    renderer_classes = [TemplateHTMLRenderer]
-    template_name = 'list.html'
+    # renderer_classes = [TemplateHTMLRenderer]
+    # template_name = 'list.html'
     
     # factory = APIRequestFactory()
     # request = factory.get('/')
