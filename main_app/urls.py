@@ -4,12 +4,12 @@ from .views.home import homepage
 from .views.signup import Signup
 from .views.login import Login , logout
 from .views.rent import create_contract
-from ..contract_app.view.savecontract import ContractSave
-from .views.contract import ContractView
-from ..car_app.view.carinfo import get_car
-from ..brand_app.view.brandinfo import get_brand
+from contract_app.view.savecontract import ContractSave
+from .views.customeraccount import AccountInfo
+from car_app.view.carinfo import get_car
+from brand_app.view.brandinfo import get_brand
 from .views.search import search
-from ..category_app.view.category import category
+from category_app.view.category import category
 from .middleware.auth import  auth_middleware
 
 
@@ -37,5 +37,5 @@ urlpatterns = [
 
     path('processcontract', auth_middleware(ContractSave.as_view()), name='process-contract'),
 
-    path('account', auth_middleware(ContractView.as_view()), name='account'),
+    path('account', auth_middleware(AccountInfo.as_view()), name='account'),
 ]

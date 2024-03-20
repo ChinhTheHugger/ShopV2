@@ -1,13 +1,13 @@
 from django.shortcuts import render, redirect
 
 from django.contrib.auth.hashers import check_password
-from car.models.customer import Customer
+from main_app.models.customer import Customer
 from django.views import View
 
-from car.models.car import Car
-from car.models.contract import Contract
+from car_app.model.car import Car
+from contract_app.model.contract import Contract
 
-from car.forms.contract import ContractForm
+from contract_app.form.contract import ContractForm
 
 import datetime
 

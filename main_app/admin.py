@@ -1,9 +1,9 @@
 from django.contrib import admin
-from ..car_app.model.car import Car
-from ..category_app.model.category import Category
+from car_app.model.car import Car
+from category_app.model.category import Category
 from .models.customer import Customer
-from ..contract_app.model.contract import Contract
-from ..brand_app.model.brand import Brand
+from contract_app.model.contract import Contract
+from brand_app.model.brand import Brand
 
 
 class AdminCar(admin.ModelAdmin):

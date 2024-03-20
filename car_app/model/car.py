@@ -1,13 +1,11 @@
 from django.db import models
-from ...category_app.model.category import Category
-from ...brand_app.model.brand import Brand
 
 class Car(models.Model):
     name= models.CharField(max_length=50)
     price= models.IntegerField(default=0)
     model= models.CharField(max_length=50,null=True)
-    brand= models.ForeignKey(Brand,on_delete=models.CASCADE,default=1 )
-    category= models.ForeignKey(Category,on_delete=models.CASCADE,default=1 )
+    brand= models.IntegerField(default=0)
+    category= models.IntegerField(default=0)
     year= models.IntegerField(default=0)
     desintext= models.CharField(max_length=250, default='', blank=True, null= True)
     front= models.ImageField(upload_to='uploads/fronts/')
